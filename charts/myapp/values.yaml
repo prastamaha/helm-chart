@@ -1,0 +1,36 @@
+######################
+# myapp chart variable
+######################
+
+# by default use release name if not defined (optional)
+name: null
+
+# numbers of pod replicas
+replicas: 3
+
+# service configurations
+service:
+  type: LoadBalancer
+  port: 80
+  protocol: TCP
+
+# rollingUpdate configurations
+rollingUpdate:
+  maxSurge: 25%
+  maxUnavailable: 0
+
+# image configurations
+image:
+  repository: nginx
+  tag: alpine
+  pullPolicy: IfNotPresent
+
+# resources configurations
+resources:
+  requests:
+    memory: "128Mi"
+    cpu: "250m"
+  limits:
+    memory: "128Mi"
+    cpu: "250m"
+

@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    {{- include "myapp.labels" . | nindent 4 }}
+  name: {{ default $.Release.Name $.Values.name }}-deployment
+spec:
+  replicas: {{ $.Values.replicas }}
+  strategy:
+    rollingUpdate:
+      maxSurge: {{ $.Values.rollingUpdate.maxSurge }}
+      maxUnavailable:  {{ $.Values.rollingUpdate.maxUnavailable }}
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      {{- include "myapp.labels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "myapp.labels" . | nindent 8 }}
+    spec:
+      serviceAccountName: {{ default $.Release.Name $.Values.name }}-sa
+      containers:
+      - image: {{ $.Values.image.repository }}:{{ $.Values.image.tag }}
+        name: nginx
+        imagePullPolicy: {{ $.Values.image.pullPolicy }}
+        resources:
+          requests:
+            memory: {{ $.Values.resources.requests.memory }}
+            cpu: {{ $.Values.resources.requests.cpu }}
+          limits:
+            memory: {{ $.Values.resources.limits.memory }}
+            cpu: {{ $.Values.resources.limits.cpu }}

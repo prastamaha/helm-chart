@@ -1,0 +1,19 @@
+apiVersion: v1
+entries:
+  myapp:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-03-24T00:42:01.270106069+07:00"
+    description: Install myapp service on kubernetes
+    digest: d61e3a17f2d0b1d35445d6796f8eb87eef82068e72277106f615ea94880634f2
+    keywords:
+    - myapp
+    maintainers:
+    - email: prastamaha@gmail.com
+      name: prastamaha
+      url: https://prastamaha.com
+    name: myapp
+    urls:
+    - https://prastamaha.github.io/helm-chart/myapp-1.0.0.tgz
+    version: 1.0.0
+generated: "2022-03-24T00:42:01.265968469+07:00"

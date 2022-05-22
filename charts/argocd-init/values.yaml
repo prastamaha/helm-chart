@@ -1,0 +1,71 @@
+# argocd configurations
+argocd:
+  dex:
+    envFrom:
+      - secretRef:
+          name: argocd-oidc # create it manually
+  server:
+    admin.enabled: true
+    config:
+      url: "https://argocd.example.com"
+      dex.config: |
+        connectors:
+        - config:
+            issuer: https://accounts.google.com
+            clientID: <CLIENT_ID>
+            clientSecret: <CLIENT_SECRET>
+          type: oidc
+          id: google
+          name: Google
+    extraArgs:
+    - --insecure
+    ingress:
+      enabled: false
+      ingressClassName: kong
+      annotations:
+        konghq.com/https-redirect-status-code: "301"
+        konghq.com/protocols: https
+      hosts:
+        - argocd.example.com
+      tls:
+      - secretName: argocd-secret
+        hosts:
+        - argocd.example.com
+
+rbac:
+  # options: ["", "role:readonly"]
+  defaultPolicy: ""
+
+  # customProjectRoles will create project scope rbac
+  # for example:
+  # ...
+  # customProjectRoles:
+  #   - logging
+  # ...
+  # that would create ["logging-admin", "logging-viewer", "logging-developer", "logging-contributor"].
+  # *-admin: can do anything to its project
+  # *-viewer: only can view the resources under project
+  # *-developer: *-viewer + can sync and override applications under project
+  # *-contributor: can to anything except delete the project
+  customProjectRoles:
+    - default
+
+  # email should using google login
+  # roles options: ["admin", "readonly"] and customProjectRoles
+  users: []
+    # - email: admin@example.com
+    #   roles:
+    #     - admin 
+    # - email: user@example.com
+    #   roles:
+    #     - default-contributor
+
+# init argocd applications
+applications:
+  - name: example-app
+    source:
+      repoURL: ""
+      path: ""
+      targetRevision: "HEAD"
+      helm:
+        valueFiles: ""

@@ -3,7 +3,7 @@ argocd:
   dex:
     envFrom:
       - secretRef:
-          name: argocd-oidc # create it manually
+          name: argocd-oauth2 # create it manually
   server:
     admin.enabled: true
     config:

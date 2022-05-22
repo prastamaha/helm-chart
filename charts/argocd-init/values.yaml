@@ -1,9 +1,5 @@
 # argocd configurations
 argocd:
-  dex:
-    envFrom:
-      - secretRef:
-          name: argocd-oauth2 # create it manually
   server:
     admin.enabled: true
     config:
@@ -60,6 +56,18 @@ rbac:
     #   roles:
     #     - default-contributor
 
+# take a look this docs as references: https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#quick-reference
+# argocd will create repository as a secret
+# type parameter will used to determine are we using stringData or data in the secret
+repositories:
+  - name: example-repository
+    data:
+      name: <name with base64 encode>
+      type: <type with base64 encode>
+      url: <url with base64 encode>
+      project: <project with base64 encode>
+      sshPrivateKey: <sshPrivateKey with base64 encode>
+    
 # init argocd applications
 applications:
   - name: example-app

@@ -2,6 +2,9 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: argocd-rbac-cm
+  annotations:
+    helm.sh/hook: post-install
+    helm.sh/hook: post-upgrade
 data:
   scopes: '[groups, email]'
 {{- if eq .Values.rbac.defaultPolicy "role:readonly" }}
@@ -15,18 +18,19 @@ data:
   {{- range .Values.rbac.customProjectRoles }}
     # {{ . }}
     p, role:{{ . }}-admin, projects, *, {{ . }}, allow
-    p, role:{{ . }}-admin, repositories, *, {{ . }}, allow
+    p, role:{{ . }}-admin, repositories, *, {{ . }}/*, allow
     p, role:{{ . }}-admin, applications, *, {{ . }}/*, allow
     p, role:{{ . }}-viewer, projects, get, {{ . }}, allow
-    p, role:{{ . }}-viewer, repositories, get, {{ . }}, allow
+    p, role:{{ . }}-viewer, repositories, get, {{ . }}/*, allow
     p, role:{{ . }}-viewer, applications, get, {{ . }}/*, allow
     p, role:{{ . }}-developer, projects, get, {{ . }}, allow
-    p, role:{{ . }}-developer, repositories, get, {{ . }}, allow
+    p, role:{{ . }}-developer, repositories, get, {{ . }}/*, allow
     p, role:{{ . }}-developer, applications, get, {{ . }}/*, allow
     p, role:{{ . }}-developer, applications, sync, {{ . }}/*, allow
     p, role:{{ . }}-developer, applications, override, {{ . }}/*, allow
     p, role:{{ . }}-contributor, projects, delete, {{ . }}, deny
-    p, role:{{ . }}-contributor, repositories, *, {{ . }}, allow
+    p, role:{{ . }}-contributor, projects, *, {{ . }}, allow
+    p, role:{{ . }}-contributor, repositories, *, {{ . }}/*, allow
     p, role:{{ . }}-contributor, applications, *, {{ . }}/*, allow
     g, {{ . }}-admin, role:{{ . }}-admin
     g, {{ . }}-viewer, role:{{ . }}-viewer

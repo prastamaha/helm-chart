@@ -4,7 +4,7 @@ name: argocd-init
 description: Install Argocd and Initial RBAC & Applications
 keywords:
   - argocd
-version: 1.0.0
+version: 1.0.1
 appVersion: v2.3.3
 maintainers:
   - name: prastamaha

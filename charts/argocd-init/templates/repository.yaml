@@ -1,0 +1,14 @@
+{{- if .Values.repositories }}
+{{- range .Values.repositories }}
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: {{ .name }}
+  namespace: {{ $.Release.Namespace }}
+  labels:
+    argocd.argoproj.io/secret-type: repository
+data:
+  {{- toYaml .data | nindent 2 }}
+{{- end }}
+{{- end }}

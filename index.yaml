@@ -3,7 +3,27 @@ entries:
   argocd-init:
   - apiVersion: v2
     appVersion: v2.3.3
-    created: "2022-05-22T18:54:38.26656161+07:00"
+    created: "2022-05-22T20:26:19.993303601+07:00"
+    dependencies:
+    - alias: argocd
+      name: argo-cd
+      repository: https://argoproj.github.io/argo-helm
+      version: 4.6.0
+    description: Install Argocd and Initial RBAC & Applications
+    digest: 1afd83385ad9c92685984ee0f96bee97ac964d58e1ba2cb9ae23787677c88dda
+    keywords:
+    - argocd
+    maintainers:
+    - email: prastamaha@gmail.com
+      name: prastamaha
+      url: https://prastamaha.com
+    name: argocd-init
+    urls:
+    - https://prastamaha.com/helm-chart/argocd-init-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: v2.3.3
+    created: "2022-05-22T20:26:19.981266815+07:00"
     dependencies:
     - alias: argocd
       name: argo-cd
@@ -24,9 +44,9 @@ entries:
   myapp:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-22T18:54:38.266853271+07:00"
+    created: "2022-05-22T20:26:19.993931648+07:00"
     description: Install myapp service on kubernetes
-    digest: b3fdaf8bf71ff2bd5935f36118c4b7118b687753a603c7ea824cc5a191847e48
+    digest: b21860b6f8bdbbe6d46396c9a7c3db67d4db6786ee71dc14e95ddf54e8e1e5b9
     keywords:
     - myapp
     maintainers:
@@ -37,4 +57,4 @@ entries:
     urls:
     - https://prastamaha.com/helm-chart/myapp-1.0.0.tgz
     version: 1.0.0
-generated: "2022-05-22T18:54:38.254530212+07:00"
+generated: "2022-05-22T20:26:19.965313696+07:00"

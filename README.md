@@ -2,7 +2,7 @@
 
 ```
 helm lint charts/*
-helm package helm-chart-sources/*
+helm package charts/*
 helm repo index --url https://prastamaha.com/helm-chart/ --merge index.yaml .
 
 git add .

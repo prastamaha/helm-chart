@@ -1,5 +1,0 @@
-# Add new repository
-
-```
-$ helm repo index --url https://prastamaha.com/helm-chart/ --merge index.yaml .
-```

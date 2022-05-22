@@ -68,4 +68,4 @@ applications:
       path: ""
       targetRevision: "HEAD"
       helm:
-        valueFiles: ""
+        valueFiles: []

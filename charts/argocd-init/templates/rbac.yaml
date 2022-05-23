@@ -2,9 +2,6 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: argocd-rbac-cm
-  annotations:
-    helm.sh/hook: post-install
-    helm.sh/hook: post-upgrade
 data:
   scopes: '[groups, email]'
 {{- if eq .Values.rbac.defaultPolicy "role:readonly" }}

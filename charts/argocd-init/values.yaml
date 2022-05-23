@@ -1,6 +1,8 @@
 # argocd configurations
 argocd:
   server:
+    # rbac config should be disable, because it will be handle by argocd-init chart
+    rbacConfigCreate: false
     admin.enabled: true
     config:
       url: "https://argocd.example.com"

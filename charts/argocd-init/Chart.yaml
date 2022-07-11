@@ -4,8 +4,8 @@ name: argocd-init
 description: Install Argocd and Initial RBAC & Applications
 keywords:
   - argocd
-version: 1.0.1
-appVersion: v2.3.3
+version: 1.0.2
+appVersion: v2.4.4
 maintainers:
   - name: prastamaha
     email: prastamaha@gmail.com
@@ -13,5 +13,5 @@ maintainers:
 dependencies:
   - name: argo-cd
     alias: argocd
-    version: "4.6.0"
+    version: "4.9.12"
     repository: "https://argoproj.github.io/argo-helm"

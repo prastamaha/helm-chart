@@ -15,20 +15,9 @@ argocd:
           type: oidc
           id: google
           name: Google
-    extraArgs:
-    - --insecure
+    extraArgs: []
     ingress:
       enabled: false
-      ingressClassName: kong
-      annotations:
-        konghq.com/https-redirect-status-code: "301"
-        konghq.com/protocols: https
-      hosts:
-        - argocd.example.com
-      tls:
-      - secretName: argocd-secret
-        hosts:
-        - argocd.example.com
 
 rbac:
   # options: ["", "role:readonly"]
@@ -69,7 +58,7 @@ repositories:
       url: <url with base64 encode>
       project: <project with base64 encode>
       sshPrivateKey: <sshPrivateKey with base64 encode>
-    
+
 # init argocd applications
 applications:
   - name: example-app

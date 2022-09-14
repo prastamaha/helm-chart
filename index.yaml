@@ -1,70 +1,9 @@
 apiVersion: v1
 entries:
-  argocd-init:
-  - apiVersion: v2
-    appVersion: v2.4.4
-    created: "2022-07-11T21:40:53.113901113+07:00"
-    dependencies:
-    - alias: argocd
-      name: argo-cd
-      repository: https://argoproj.github.io/argo-helm
-      version: 4.9.12
-    description: Install Argocd and Initial RBAC & Applications
-    digest: 3b94e42ad6ff5995551620ace6810ccbacb5f6e30229177cffc44e848fca885d
-    keywords:
-    - argocd
-    maintainers:
-    - email: prastamaha@gmail.com
-      name: prastamaha
-      url: https://prastamaha.com
-    name: argocd-init
-    urls:
-    - https://prastamaha.com/helm-chart/argocd-init-1.0.2.tgz
-    version: 1.0.2
-  - apiVersion: v2
-    appVersion: v2.3.3
-    created: "2022-07-11T21:40:53.091160926+07:00"
-    dependencies:
-    - alias: argocd
-      name: argo-cd
-      repository: https://argoproj.github.io/argo-helm
-      version: 4.6.0
-    description: Install Argocd and Initial RBAC & Applications
-    digest: f8dd70e09da57751329f7fdf965ce05c674d2019491548198d5eba2d174e2856
-    keywords:
-    - argocd
-    maintainers:
-    - email: prastamaha@gmail.com
-      name: prastamaha
-      url: https://prastamaha.com
-    name: argocd-init
-    urls:
-    - https://prastamaha.com/helm-chart/argocd-init-1.0.1.tgz
-    version: 1.0.1
-  - apiVersion: v2
-    appVersion: v2.3.3
-    created: "2022-07-11T21:40:53.06564038+07:00"
-    dependencies:
-    - alias: argocd
-      name: argo-cd
-      repository: https://argoproj.github.io/argo-helm
-      version: 4.6.0
-    description: Install Argocd and Initial RBAC & Applications
-    digest: ef7009ee2cc9522e49c51a2be3059dd3ac0ad7bf5589987be5226bf222d30164
-    keywords:
-    - argocd
-    maintainers:
-    - email: prastamaha@gmail.com
-      name: prastamaha
-      url: https://prastamaha.com
-    name: argocd-init
-    urls:
-    - https://prastamaha.com/helm-chart/argocd-init-1.0.0.tgz
-    version: 1.0.0
   myapp:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-07-11T21:40:53.114607751+07:00"
+    created: "2022-09-14T16:17:03.247576919+07:00"
     description: Install myapp service on kubernetes
     digest: 33c76e320f43245f43175564b0b2554956d99709b2de15e5503587c23d0f7676
     keywords:
@@ -77,4 +16,4 @@ entries:
     urls:
     - https://prastamaha.com/helm-chart/myapp-1.0.0.tgz
     version: 1.0.0
-generated: "2022-07-11T21:40:53.041313903+07:00"
+generated: "2022-09-14T16:17:03.246618789+07:00"

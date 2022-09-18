@@ -3,7 +3,7 @@ entries:
   myapp:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-09-17T16:32:35.096275864+07:00"
+    created: "2022-09-18T04:18:50.317785455Z"
     description: Install myapp service on kubernetes
     digest: 33c76e320f43245f43175564b0b2554956d99709b2de15e5503587c23d0f7676
     keywords:
@@ -16,4 +16,19 @@ entries:
     urls:
     - https://prastamaha.com/helm-chart/myapp-1.0.0.tgz
     version: 1.0.0
-generated: "2022-09-17T16:32:35.094957577+07:00"
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-09-18T04:18:50.318295877Z"
+    description: Install myapp service on kubernetes
+    digest: 33c76e320f43245f43175564b0b2554956d99709b2de15e5503587c23d0f7676
+    keywords:
+    - myapp
+    maintainers:
+    - email: prastamaha@gmail.com
+      name: prastamaha
+      url: https://prastamaha.com
+    name: myapp
+    urls:
+    - https://prastamaha.com/helm-chart/myapp-1.0.1.tgz
+    version: 1.0.0
+generated: "2022-09-18T04:18:50.316866885Z"

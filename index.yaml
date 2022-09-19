@@ -1,9 +1,28 @@
 apiVersion: v1
 entries:
+  argocd-config:
+  - apiVersion: v2
+    appVersion: v2.4.12
+    created: "2022-09-19T14:29:56.998060315Z"
+    dependencies:
+    - alias: argocd
+      name: argo-cd
+      repository: https://argoproj.github.io/argo-helm
+      version: 5.4.6
+    description: Install Argocd and Configure Argocd Resources
+    digest: b198538463a47fd7e02becae91f87dbde8f8928f49f906b7d0bc55f2ef7ee803
+    maintainers:
+    - email: prastamaha@gmail.com
+      name: prastamaha
+      url: https://prastamaha.com
+    name: argocd-config
+    urls:
+    - https://prastamaha.com/helm-chart/argocd-config-1.0.0.tgz
+    version: 1.0.0
   myapp-example:
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2022-09-19T14:24:45.771050056Z"
+    created: "2022-09-19T14:29:56.998460374Z"
     description: Install myapp-example service on kubernetes
     digest: da25da58f9a69c88f5de27521d9ff66032d908f363c245a92fe3ab60b90bb907
     keywords:
@@ -16,4 +35,4 @@ entries:
     urls:
     - https://prastamaha.com/helm-chart/myapp-example-1.0.1.tgz
     version: 1.0.1
-generated: "2022-09-19T14:24:45.770203504Z"
+generated: "2022-09-19T14:29:56.982773812Z"

@@ -3,7 +3,7 @@ entries:
   myapp-example:
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2022-09-19T20:13:40.869329103+07:00"
+    created: "2022-09-19T13:18:15.142903986Z"
     description: Install myapp-example service on kubernetes
     digest: da25da58f9a69c88f5de27521d9ff66032d908f363c245a92fe3ab60b90bb907
     keywords:
@@ -16,4 +16,4 @@ entries:
     urls:
     - https://prastamaha.com/helm-chart/myapp-example-1.0.1.tgz
     version: 1.0.1
-generated: "2022-09-19T20:13:40.868618986+07:00"
+generated: "2022-09-19T13:18:15.141974168Z"

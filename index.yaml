@@ -3,7 +3,7 @@ entries:
   argocd-config:
   - apiVersion: v2
     appVersion: v2.4.12
-    created: "2022-09-21T15:46:32.314952378Z"
+    created: "2022-09-21T15:57:55.158461072Z"
     dependencies:
     - alias: argocd
       name: argo-cd
@@ -19,9 +19,43 @@ entries:
     urls:
     - https://prastamaha.com/helm-chart/argocd-config-1.0.0.tgz
     version: 1.0.0
+  infrastructure:
+  - apiVersion: v2
+    created: "2022-09-21T15:57:55.178491092Z"
+    dependencies:
+    - condition: ingress-nginx.enabled
+      name: ingress-nginx
+      repository: https://kubernetes.github.io/ingress-nginx
+      version: 4.2.0
+    - condition: kubernetes-rbac.enabled
+      name: kubernetes-rbac
+      repository: https://prastamaha.com/helm-chart/
+      version: 1.0.1
+    - condition: cert-manager.enabled
+      name: cert-manager
+      repository: https://charts.jetstack.io
+      version: v1.9.1
+    - condition: external-secrets.enabled
+      name: external-secrets
+      repository: https://charts.external-secrets.io
+      version: 0.5.9
+    - condition: external-dns.enabled
+      name: external-dns
+      repository: https://charts.bitnami.com/bitnami
+      version: 6.4.4
+    digest: fa8dd809143a8b30174d58701bd0c344e2655290a80e79b42f725c35ea6f618b
+    maintainers:
+    - email: prastamaha@gmail.com
+      name: prastamaha
+      url: https://prastamaha.com
+    name: infrastructure
+    type: application
+    urls:
+    - https://prastamaha.com/helm-chart/infrastructure-1.0.0.tgz
+    version: 1.0.0
   kubernetes-rbac:
   - apiVersion: v2
-    created: "2022-09-21T15:46:32.315496441Z"
+    created: "2022-09-21T15:57:55.179474143Z"
     description: Helm chart to define kubernetes rbac
     digest: 775ae57f2d6f24a1294d20143373d764e7f04fed0265b47c565524bc49424f4e
     keywords:
@@ -36,7 +70,7 @@ entries:
     - https://prastamaha.com/helm-chart/kubernetes-rbac-1.0.1.tgz
     version: 1.0.1
   - apiVersion: v2
-    created: "2022-09-21T15:46:32.315224562Z"
+    created: "2022-09-21T15:57:55.178965935Z"
     description: Helm chart to define kubernetes rbac
     digest: a0fbf979edbf0a6d9199ddb143ea3ad101a434ee673a2b8f8097c52bc128f417
     keywords:
@@ -53,7 +87,7 @@ entries:
   myapp-example:
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2022-09-21T15:46:32.315869797Z"
+    created: "2022-09-21T15:57:55.180062607Z"
     description: Install myapp-example service on kubernetes
     digest: da25da58f9a69c88f5de27521d9ff66032d908f363c245a92fe3ab60b90bb907
     keywords:
@@ -66,4 +100,4 @@ entries:
     urls:
     - https://prastamaha.com/helm-chart/myapp-example-1.0.1.tgz
     version: 1.0.1
-generated: "2022-09-21T15:46:32.299985687Z"
+generated: "2022-09-21T15:57:55.141450238Z"

@@ -3,7 +3,7 @@ entries:
   argocd-config:
   - apiVersion: v2
     appVersion: v2.4.12
-    created: "2022-09-20T18:07:57.228328066Z"
+    created: "2022-09-21T10:16:28.641968599Z"
     dependencies:
     - alias: argocd
       name: argo-cd
@@ -21,7 +21,7 @@ entries:
     version: 1.0.0
   kubernetes-rbac:
   - apiVersion: v2
-    created: "2022-09-20T18:07:57.228646381Z"
+    created: "2022-09-21T10:16:28.642236696Z"
     description: Helm chart to define kubernetes rbac
     digest: a0fbf979edbf0a6d9199ddb143ea3ad101a434ee673a2b8f8097c52bc128f417
     keywords:
@@ -38,7 +38,7 @@ entries:
   myapp-example:
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2022-09-20T18:07:57.229016557Z"
+    created: "2022-09-21T10:16:28.642593905Z"
     description: Install myapp-example service on kubernetes
     digest: da25da58f9a69c88f5de27521d9ff66032d908f363c245a92fe3ab60b90bb907
     keywords:
@@ -51,4 +51,4 @@ entries:
     urls:
     - https://prastamaha.com/helm-chart/myapp-example-1.0.1.tgz
     version: 1.0.1
-generated: "2022-09-20T18:07:57.212822348Z"
+generated: "2022-09-21T10:16:28.626615543Z"
